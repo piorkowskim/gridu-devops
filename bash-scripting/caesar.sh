@@ -1,15 +1,6 @@
 #!/bin/bash
-set -x
-ans=""
-# Function to convert ASCII value to character
-chr() {
-	[ "$1" -lt 256 ] || return 1
-	printf "\\$(printf '%03o' "$1")"
-}
-# Function to convert character to ASCII value
-ord() {
-	LC_CTYPE=C printf '%d' "'$1"
-}
+a=abcdefghijklmnopqrstuvwxyz
+b=ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 # Function to perform the Caesar cipher encryption/decryption
 caesar_cipher() {
@@ -24,14 +15,7 @@ caesar_cipher() {
   fi
 
   # Perform the Caesar cipher transformation and write to the output file
-  for ((i=0; i<${#text}; i++)); do
-      if [[ ${text[i]} == " " ]]; then
-	ans+=" "
-      fi
-      ch=ord ${text[i]}
-      val=`expr $ch + $shift` 
-      ans+=chr $val
-  done
+  sed "y/$a/${a:$shift}${a::$shift}/; y/$b/${b:$shift}${b::shift}/" "$input" > "$output"
 }
 
 # Parse command-line arguments
