@@ -7,7 +7,6 @@ caesar_cipher() {
   local input="$1"
   local output="$2"
   local shift="$3"
-  local text=`cat $input`
   # Check if the input file exists
   if [[ ! -f "$input" ]]; then
     echo "Error: Input file '$input' not found."
