@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.6
+
 import sys
 from collections import Counter
 
@@ -17,21 +19,18 @@ def read_access_log(filename):
 
     return user_agents
 
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <access_log_file>")
-        sys.exit(1)
+if len(sys.argv) != 2:
+    print("Usage: python script.py <access_log_file>")
+    sys.exit(1)
 
-    filename = sys.argv[1]
-    user_agents = read_access_log(filename)
+filename = sys.argv[1]
+user_agents = read_access_log(filename)
 
-    total_unique_user_agents = len(set(user_agents))
-    print("Total different User Agents:", total_unique_user_agents)
+total_unique_user_agents = len(set(user_agents))
+print("Total different User Agents:", total_unique_user_agents)
 
-    user_agent_counter = Counter(user_agents)
-    print("\nUser Agent Statistics:")
-    for user_agent, count in user_agent_counter.items():
-        print(f"{user_agent}: {count} requests")
+user_agent_counter = Counter(user_agents)
+print("\nUser Agent Statistics:")
+for user_agent, count in user_agent_counter.items():
+    print(f"{user_agent}: {count} requests")
 
-if __name__ == "__main__":
-    main()
