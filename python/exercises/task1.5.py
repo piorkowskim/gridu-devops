@@ -38,30 +38,31 @@ def main():
     args = parser.parse_args()
 
     if args.distro:
-        print("Distro Info:", get_distro_info())
+        print(f"Distro Info: {get_distro_info()}\n")
 
     if args.memory:
         total, used, free = get_memory_info()
-        print("Memory Info:")
+        print(f"Memory Info:")
         print(f"Total: {total} bytes")
         print(f"Used: {used} bytes")
-        print(f"Free: {free} bytes")
+        print(f"Free: {free} bytes\n")
 
     if args.cpu:
         cpu_info = get_cpu_info()
-        print("CPU Info:")
+        print(f"CPU Info:")
         print(f"Model: {cpu_info['model']}")
         print(f"Core Count: {cpu_info['core_count']}")
-        print(f"Speed: {cpu_info['speed']} MHz")
+        print(f"Speed: {cpu_info['speed']} MHz\n")
 
     if args.user:
-        print("Current User:", get_user_info())
+        print(f"Current User: {get_user_info()}\n")
 
-    if args.load:
+    if args.loadavg:
         load_avg = get_load_average()
-        print("Load Average:", load_avg)
+        print(f"Load Average: {load_avg}\n")
 
     if args.ip:
-        print("IP Address:", get_ip_address())
+        print(f"IP Address: {get_ip_address()}\n")
+
 
 main()
