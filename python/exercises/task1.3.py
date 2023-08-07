@@ -7,7 +7,6 @@ def read_access_log(filename):
     try:
         with open(filename, 'r') as file:
             for line in file:
-                # Assuming user agent appears between double quotes after ' " '
                 start = line.find('"') + 1
                 end = line.find('"', start + 1)
                 user_agent = line[start:end]
