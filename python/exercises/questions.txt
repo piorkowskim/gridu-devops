@@ -1,0 +1,64 @@
+{
+	"Survey about Red Pandas": {
+		"Page 1": {
+			"Question1": {
+				"Description": "What do you find most fascinating about red pandas?",
+				"Answers": [
+					"I'm amazed by their fluffy tails and how they use them for balance.",
+					"The way they move so gracefully in trees really captivates me."
+				]
+			},
+			"Question2": {
+				"Description": "In your opinion, what role do red pandas play in their ecosystems?",
+				"Answers": [
+					"I think they help control insect populations, which benefits the entire ecosystem.",
+					"Red pandas might play a role in spreading seeds as they move between trees, aiding in forest regeneration."
+				]
+			},
+			"Question3": {
+				"Description": "How important is the conservation of red pandas to you, and why?",
+				"Answers": [
+					"Conservation is very important because red pandas are unique and contribute to biodiversity.",
+					"I care deeply about their conservation as losing such a beautiful species would be a loss for the planet."
+				]
+			},
+			"Question4": {
+				"Description": "Do you think enough is being done to protect red panda habitats? Why or why not?",
+				"Answers": [
+					"I believe more efforts are needed, especially in regions facing deforestation.",
+					"There's progress, but more awareness and funding are required to ensure their habitats are truly safeguarded."
+				]
+			}
+		},
+		"Page 2": {
+			"Question5": {
+				"Description": "If you had the chance to raise awareness about red pandas, how would you do it?",
+				"Answers": [
+					"I'd create educational campaigns in schools to inform kids about red pandas and their habitats.",
+					"Organizing workshops and eco-tours focused on red pandas could be an engaging way to raise awareness."
+				]
+			},
+			"Question6": {
+				"Description": "What emotions do red pandas evoke in you, and why do you think they have such an impact?",
+				"Answers": [
+					"Red pandas evoke a sense of wonder and joy because of their playful behavior and adorable appearance.",
+					"Their vulnerability and the threats they face make me feel a sense of responsibility towards their well-being."
+				]
+			},
+			"Question7": {
+				"Description": "In your view, how can individuals contribute to the well-being of red pandas and their habitats?",
+				"Answers": [
+					"Supporting organizations dedicated to red panda conservation financially and spreading awareness.",
+					"Making sustainable choices in daily life can indirectly help by reducing demand for products linked to deforestation."
+				]
+			},
+			"Question8": {
+				"Description": "If you could spend a day with red pandas, what activities would you want to engage in with them?",
+				"Answers": [
+					"I'd love to observe them in their natural habitat and learn about their behaviors.",
+					"Playing and interacting with them while also participating in enrichment activities to stimulate their minds."
+				]
+			}
+		}
+	}
+}
