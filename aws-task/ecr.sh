@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# task b. c.
+
 region='eu-west-1'
 acc_id='113304117666'
 
