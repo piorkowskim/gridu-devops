@@ -2,7 +2,8 @@
 
 # Variables
 PROJECT_ID="playground-s-11-f2127101"
-ZONE="us-central1-a"
+REGION="us-east1"
+ZONE="us-east1-a"
 VPC_NAME="my-vpc"
 SUBNET_NAME="my-subnet"
 GCR_NAME="my-container-registry"
@@ -18,6 +19,7 @@ gcloud compute networks create $VPC_NAME --project=$PROJECT_ID
 # Create Subnet
 gcloud compute networks subnets create $SUBNET_NAME \
   --project=$PROJECT_ID \
+  --range=10.0.0.0/24
   --network=$VPC_NAME \
   --region=$ZONE
 
@@ -44,17 +46,11 @@ gcloud compute instances create $VM_NAME \
   --image-project=$IMAGE_PROJECT \
   --tags=http-https-ssh
 
-# Open firewall ports for HTTP, HTTPS, and SSH
-gcloud compute firewall-rules create allow-http-https \
-  --project=$PROJECT_ID \
-  --allow=tcp:80,tcp:443 \
-  --network=$VPC_NAME \
-  --source-ranges=0.0.0.0/0
-
 # Create a static public IP address for the VM
 gcloud compute addresses create my-static-ip \
   --project=$PROJECT_ID \
-  --region=$ZONE
+  --region=$REGION
+  
 
 # Attach the static IP address to the VM
 gcloud compute instances add-access-config $VM_NAME \
