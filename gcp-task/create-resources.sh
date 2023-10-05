@@ -3,7 +3,7 @@
 # Variables
 PROJECT_ID="playground-s-11-f2127101"
 REGION="us-east1"
-ZONE="us-east1-a"
+ZONE="us-east1-b"
 VPC_NAME="my-vpc"
 SUBNET_NAME="my-subnet"
 GCR_NAME="my-container-registry"
@@ -26,7 +26,7 @@ gcloud compute networks subnets create $SUBNET_NAME \
 # Create Google Container Registry (GCR)
 gcloud artifacts repositories create $GCR_NAME \
   --repository-format=docker \
-  --location=us-central1 \
+  --location=$REGION \
   --project=$PROJECT_ID
 
 # Create Firewall Rules
