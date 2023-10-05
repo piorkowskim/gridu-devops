@@ -39,15 +39,4 @@ gcloud compute instances create $VM_NAME \
   --image-project=$IMAGE_PROJECT \
   --tags=http-https-ssh
 
-# Create a static public IP address for the VM
-gcloud compute addresses create my-static-ip \
-  --project=$PROJECT_ID \
-  --region=$REGION
-  
 
-# Attach the static IP address to the VM
-gcloud compute instances add-access-config $VM_NAME \
-  --project=$PROJECT_ID \
-  --zone=$ZONE \
-  --access-config-name=external-nat \
-  --address=my-static-ip
