@@ -17,17 +17,10 @@ ALLOWED_PORTS="tcp:80,tcp:443,tcp:22"
 gcloud compute networks create $VPC_NAME --project=$PROJECT_ID
 
 # Create Subnet
-gcloud compute networks subnets create $SUBNET_NAME \
-  --project=$PROJECT_ID \
-  --range=10.0.0.0/24
-  --network=$VPC_NAME \
-  --region=$ZONE
+gcloud compute networks subnets create my-subnet --project=$PROJECT_ID --range=10.0.0.0/24 --network=$VPC_NAME --region=$REGION
 
 # Create Google Container Registry (GCR)
-gcloud artifacts repositories create $GCR_NAME \
-  --repository-format=docker \
-  --location=$REGION \
-  --project=$PROJECT_ID
+gcloud artifacts repositories create $GCR_NAME --repository-format=docker --location=$REGION --project=$PROJECT_ID
 
 # Create Firewall Rules
 gcloud compute firewall-rules create allow-http-https-ssh \
