@@ -2,11 +2,11 @@
 
 # Variables
 
-resourceGroupName="rg_my"
-location="USEast"
+resourceGroupName="1-b53d2dda-playground-sandbox"
+location="eastus"
 vnetName="vnet_my"
-subnetName="subnet"
-acrName="acr_my"
+subnetName="my_subnet"
+acrName="acrazuretaskmp"
 vmName="vm_my"
 nsgName="nsg_my"
 publicIpName="my_ip"
@@ -35,7 +35,7 @@ az network nsg rule create --resource-group $resourceGroupName --nsg-name $nsgNa
 az network nsg rule create --resource-group $resourceGroupName --nsg-name $nsgName --name AllowSSH --priority 120 --protocol Tcp --direction Inbound --source-address-prefix '*' --source-port-range '*' --destination-address-prefix '*' --destination-port-range 22 --access Allow
 
 # Create a virtual machine
-az vm create --resource-group $resourceGroupName --name $vmName --image UbuntuLTS --admin-username aaa --admin-password aaa --nsg $nsgName --subnet $subnetName --public-ip-address $publicIpName
+az vm create --resource-group $resourceGroupName --name $vmName --image UbuntuLTS --admin-username milossh --admin-password 'Aa1!Aa1!Aa1!Aa!1' --nsg $nsgName --subnet $subnetName --vnet-name $vnetName --public-ip-address $publicIpName
 
 # Output information
 echo "Resource Group: $resourceGroupName"
