@@ -1,0 +1,4 @@
+# combined playbook to deploy spring-petclinic app
+---
+  - import_playbook: install-docker.yml
+  - import_playbook: deploy-app.yml

@@ -1,0 +1,20 @@
+# playbook to deploy docker image
+---
+- hosts: servers
+  become: true
+  vars:
+    container_name: docker
+    container_image: miloshsh/spring-petclinic:latest
+  tasks:
+  - name: Pull petclinic docker image
+    community.docker.docker_image:
+      name: "{{ container_image }}"
+      source: pull
+  
+  - name: Create container
+    community.docker.docker_container:
+      name: "{{ container_name }}"
+      image: "{{ container_image }}"
+      state: started
+      ports:
+      - "80:8080"
